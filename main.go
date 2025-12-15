@@ -1,18 +1,13 @@
 package main
 
-import "github.com/helga228/tasks/int"
+import (
+	int_task "github.com/helga228/tasks/easy"
+)
 
 func main() {
-	// Базовые операции
-	int_task.SimpleCalculations()
-	// Переполнение и типы
-	int_task.Overflow()
-	// Побитовые операции
-	int_task.Bitwise()
-	// Преобразование типов
-	int_task.TypeConversion()
-	//
-	int_task.ProcessNumberDigits()
-	//
-	int_task.RoundAndCompareFloat()
+	var numbers = []int{3, 9, 9}
+	int_task.IsPalindrome(121)
+	int_task.RomanToInt("III")
+	int_task.PlusOne(numbers)
+
 }
