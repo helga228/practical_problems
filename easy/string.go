@@ -1,5 +1,7 @@
 package easy_task
 
+import "fmt"
+
 func LongestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ""
@@ -26,6 +28,29 @@ func LongestCommonPrefix(strs []string) string {
 	return strs[0][:minLen]
 }
 
-func isValid(s string) bool {
-
+func IsValid(s string) bool {
+	stack := make([]rune, 0, len(s))
+	for _, r := range s {
+		switch r {
+		case '(', '{', '[':
+			stack = append(stack, r)
+		case ')':
+			if len(stack) == 0 || stack[len(stack)-1] != '(' {
+				return false
+			}
+			stack = stack[:len(stack)-1]
+		case '}':
+			if len(stack) == 0 || stack[len(stack)-1] != '{' {
+				return false
+			}
+			stack = stack[:len(stack)-1]
+		case ']':
+			if len(stack) == 0 || stack[len(stack)-1] != '[' {
+				return false
+			}
+			stack = stack[:len(stack)-1]
+		}
+	}
+	fmt.Print(true)
+	return len(stack) == 0
 }

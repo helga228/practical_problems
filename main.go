@@ -14,5 +14,6 @@ func main() {
 	//string
 	var strings = []string{"test", "test1", "test2", "re", "te"}
 	easy_task.LongestCommonPrefix(strings)
+	easy_task.IsValid("[]{}({)")
 
 }
