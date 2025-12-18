@@ -1,4 +1,4 @@
-package int_task
+package easy_task
 
 import "fmt"
 
