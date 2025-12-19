@@ -6,14 +6,12 @@ import (
 
 func main() {
 	//int
-	var numbers = []int{3, 9, 9}
 	easy_task.IsPalindrome(121)
 	easy_task.RomanToInt("III")
-	easy_task.PlusOne(numbers)
+	easy_task.PlusOne([]int{3, 9, 9})
 
 	//string
-	var strings = []string{"test", "test1", "test2", "re", "te"}
-	easy_task.LongestCommonPrefix(strings)
+	easy_task.LongestCommonPrefix([]string{"test", "test1", "test2", "re", "te"})
 	easy_task.IsValid("[]{}({)")
-
+	easy_task.LengthOfLastWord("text for test_func j ")
 }

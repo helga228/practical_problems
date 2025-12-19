@@ -54,3 +54,17 @@ func IsValid(s string) bool {
 	fmt.Print(true)
 	return len(stack) == 0
 }
+
+func LengthOfLastWord(s string) int {
+	lenStr := 0
+	for i := len(s) - 1; i >= 0; i-- {
+		if s[i] != ' ' {
+			lenStr++
+		}
+		if s[i] == ' ' && lenStr > 0 {
+			break
+		}
+	}
+	fmt.Print(lenStr)
+	return lenStr
+}
