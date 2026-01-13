@@ -17,18 +17,19 @@ func TwoSum(nums []int, target int) []int {
 	return []int{-1, -1}
 }
 
-func SearchInsert(nums []int, target int) int {
-	med := len(nums) / 2
-	if nums[med] == target {
-		fmt.Println(med)
-		return med
+func SearchInsert(arr []int, target int) int {
+	left, right := 0, len(arr)-1
+
+	for left <= right {
+		mid := left + (right-left)/2
+		if arr[mid] == target {
+			return mid
+		} else if arr[mid] < target {
+			left = mid + 1
+		} else {
+			right = mid - 1
+		}
 	}
-	if nums[med] > target {
-		SearchInsert(nums[:med], target)
-	}
-	if nums[med] < target {
-		SearchInsert(nums[med:], target)
-	}
-	fmt.Println(med)
-	return med
+
+	return -1
 }
