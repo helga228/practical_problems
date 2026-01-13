@@ -1,1 +1,1 @@
-# practical_problems
+<h1 align="center">Привет! 👋 Я решаю алгоритмические задачи</h1> <h3 align="center">Репозиторий с решениями задач с LeetCode, CodeWars и других платформ</h3>
