@@ -51,7 +51,7 @@ func IsValid(s string) bool {
 			stack = stack[:len(stack)-1]
 		}
 	}
-	fmt.Print(true)
+	fmt.Println(true)
 	return len(stack) == 0
 }
 
@@ -65,6 +65,6 @@ func LengthOfLastWord(s string) int {
 			break
 		}
 	}
-	fmt.Print(lenStr)
+	fmt.Println(lenStr)
 	return lenStr
 }
