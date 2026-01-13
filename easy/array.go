@@ -1,6 +1,9 @@
 package easy_task
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func TwoSum(nums []int, target int) []int {
 	start := 0
@@ -32,4 +35,13 @@ func SearchInsert(arr []int, target int) int {
 	}
 
 	return -1
+}
+
+func MajorityElement(nums []int) int {
+	sorted := make([]int, len(nums))
+	copy(sorted, nums)
+	sort.Ints(sorted)
+
+	fmt.Println(sorted[len(sorted)/2])
+	return sorted[len(sorted)/2]
 }

@@ -1,8 +1,6 @@
 package main
 
-import (
-	easy_task "github.com/helga228/tasks/easy"
-)
+import easy_task "github.com/helga228/tasks/easy"
 
 func main() {
 	////int
@@ -17,5 +15,6 @@ func main() {
 	//
 	////array
 	//easy_task.TwoSum([]int{6, 8, 6, 9}, 12)
-	easy_task.SearchInsert([]int{1, 2, 3, 4, 5}, 5)
+	//easy_task.SearchInsert([]int{1, 2, 3, 4, 5}, 5)
+	easy_task.MajorityElement([]int{1, 2, 6, 6, 3, 3, 6, 6, 6, 6, 6})
 }
