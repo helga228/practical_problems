@@ -5,6 +5,41 @@ import (
 	"sort"
 )
 
+func EasyBinarySearch(nums []int, target int) int {
+	left, right := 0, len(nums)-1
+
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] == target {
+			fmt.Println(mid)
+			return mid
+		} else if nums[mid] < target {
+			left = mid + 1
+		} else if nums[mid] > target {
+			right = mid - 1
+		}
+	}
+	return -1
+}
+
+func SearchInsertPosition(nums []int, target int) int {
+	left, right := 0, len(nums)-1
+
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] == target {
+			fmt.Println(mid)
+			return mid
+		} else if nums[mid] < target {
+			left = mid + 1
+		} else if nums[mid] > target {
+			right = mid - 1
+		}
+	}
+	fmt.Println(left)
+	return left
+}
+
 func TwoSum(nums []int, target int) []int {
 	start := 0
 	for i := 1; i < len(nums); i++ {
@@ -18,23 +53,6 @@ func TwoSum(nums []int, target int) []int {
 		}
 	}
 	return []int{-1, -1}
-}
-
-func SearchInsert(arr []int, target int) int {
-	left, right := 0, len(arr)-1
-
-	for left <= right {
-		mid := left + (right-left)/2
-		if arr[mid] == target {
-			return mid
-		} else if arr[mid] < target {
-			left = mid + 1
-		} else {
-			right = mid - 1
-		}
-	}
-
-	return -1
 }
 
 func MajorityElement(nums []int) int {
