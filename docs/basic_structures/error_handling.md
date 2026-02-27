@@ -65,7 +65,83 @@ func main() {
     fmt.Println("Результат:", result)
 ```
 
-//TODO Расписать про более сложные ошибки
+Интерфейс error
+
+Есть спец интерфейс, который содержит один метод Error с возвращаемым типом string. Значение по умолчанию nil
+
+ ```
+type error interface{
+ 
+    Error() string
+}
+```
+
+Любой тип, реализующий интерфейс error, может представлять тип ошибки.
+
+Допустим, у нас есть принятый формат возвращаемых ошибок:
+
+ ```
+{
+    "error_type": "",
+    "error_text": "",
+    "error_info": ""
+}
+```
+
+В таком случае для начала реализуем структуру:
+
+ ```
+type CustomError struct {
+	ErrorType string `json:"error_type"`
+	ErrorText string `json:"error_text"`
+	ErrorInfo string `json:"error_info"`
+}
+```
+
+Затем нужна реализация интерфейса Error() и конструктор ошибки:
+
+ ```
+func (e CustomError) Error() string {
+	data, _ := json.Marshal(e)
+	return string(data)
+}
+
+func NewCustomError(t, text, info string) error {
+	return CustomError{
+		ErrorType: t,
+		ErrorText: text,
+		ErrorInfo: info,
+	}
+}
+```
+
+Сама функция которая может вернуть ошибку и ее вызов:
 
 
+ ```
+func GetCustomError(isError bool) error {
+	if isError {
+		return NewCustomError(
+			"VALIDATION_ERROR",
+			"invalid input",
+			"field email is required",
+		)
+	}
+	return nil
+}
 
+func main() {
+	err := GetCustomError(true)
+
+	if err != nil {
+		fmt.Println(err) // выведет JSON
+	}
+}
+```
+
+И вот такой ответ получим:
+
+ ```
+{"error_type":"VALIDATION_ERROR","error_text":"invalid input","error_info":"field email is required"}
+
+```

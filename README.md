@@ -1,1 +1,18 @@
-<h1 align="center">Привет! 👋 Я решаю алгоритмические задачи</h1> <h3 align="center">Репозиторий с решениями задач с LeetCode, CodeWars и других платформ</h3>
+<h1 align="center">Привет! 👋 Я тут просто всяким разным занимаюсь</h1> 
+
+## Basic structures
+
+- [x] conditional statements
+- [x] struct
+- [x] cycles
+- [x] error_handling
+- [ ] concurrency
+- [ ] declaration of variables
+- [ ] access control
+- [ ] defer
+- [ ] initialization
+- [ ] interface
+- [ ] method
+- [ ] panic recover
+- [ ] special designs
+- [ ] switch
